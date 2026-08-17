@@ -1,0 +1,42 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'pk.examprep.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "pk.examprep.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            // Debug builds are signed automatically with the standard debug key,
+            // so the APK installs without any keystore setup.
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // give the built file a friendly name
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = "ExamPrep-${variant.name}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}
