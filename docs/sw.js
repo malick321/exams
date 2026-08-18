@@ -1,7 +1,7 @@
 /* Offline cache. Once the page has loaded a single time the app runs with the
    phone completely offline — this is what makes the installed icon behave like
    a real app rather than a bookmark. */
-const CACHE = 'examprep-v2';
+const CACHE = 'examprep-v3';
 const FILES = ['./', './index.html', './manifest.webmanifest',
                './icon-180.png', './icon-192.png', './icon-512.png'];
 
